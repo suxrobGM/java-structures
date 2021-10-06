@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import collections.LinkedList;
 
-class LinkedListTest {
+class LinkedListTests {
     
     @Test
     public void insertAtFrontTest() {
