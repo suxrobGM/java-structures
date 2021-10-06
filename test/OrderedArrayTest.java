@@ -1,37 +1,58 @@
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import collections.OrderedArray;
 
 public class OrderedArrayTest {
-    public static void main(String[] args) {
-		int maxSize = 100; // array size
-		OrderedArray<Integer> arr = new OrderedArray<Integer>(maxSize); // create the array
 
-		arr.insert(5);
-		arr.insert(4); // insert 10 items
-		arr.insert(0);
-		arr.insert(2);
+    private OrderedArray<Integer> _array;
 
-		arr.insert(99);
-		arr.insert(44);
-		arr.insert(55);
-		arr.insert(22);
-		arr.insert(88);
-		arr.insert(11);
-		arr.insert(00);
-		arr.insert(66);
-		arr.insert(33);
+    @BeforeEach
+    private void init() {
+        _array = new OrderedArray<Integer>(100);
+        _array.insert(5); // insert 10 items
+		_array.insert(4); 
+		_array.insert(0);
+		_array.insert(2);
+		_array.insert(5);
+		_array.insert(44);
+		_array.insert(55);
+		_array.insert(22);
+		_array.insert(88);
+		_array.insert(11);
+    }
 
-		int searchKey = 55; // search for item
-		if (arr.find(searchKey) != arr.size())
-			System.out.println("Found " + searchKey);
-		else
-			System.out.println("Can't find " + searchKey);
 
-		//arr.display(); // display items
+    @Test
+    public void insert_Item_To_Orderedarray() {
+        _array.insert(50);
+        // content of the array should be {0, 2, 4, 5, 5, 11, 22, 44, 50, 55, 88}
 
-		arr.delete(00); // delete 3 items
-		arr.delete(55);
-		arr.delete(99);
+        assertThat(_array, hasItem(50));
+        assertEquals(11, _array.size());
+        assertEquals(50, _array.getItemAt(8).intValue());
+        assertEquals(55, _array.getItemAt(9).intValue());
+    }
 
-		//arr.display(); // display items again
-	}
+    @Test
+    public void delete_Item_From_Orderedarray() {
+        _array.delete(44);
+        // content of the array should be {0, 2, 4, 5, 5, 11, 22, 55, 88}
+
+        assertThat(_array, not(44));
+        assertEquals(9, _array.size());
+        assertEquals(22, _array.getItemAt(6).intValue());
+        assertEquals(50, _array.getItemAt(7).intValue());
+    }
+
+    @Test
+    public void search_Item_In_Orderedarray() {
+        assertTrue(_array.find(11) >= 0);
+        assertTrue(_array.find(12) == -1);
+    }
 }

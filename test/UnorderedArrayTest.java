@@ -1,4 +1,9 @@
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import collections.UnorderedArray;
@@ -6,14 +11,6 @@ import collections.UnorderedArray;
 class UnorderedArrayTest {
 
     private UnorderedArray<Integer> _array;
-    private static <T> void display(UnorderedArray<T> arr) {
-        for (var item : arr) {
-            if (item != null) {
-                System.out.printf(item.toString() + " ");   
-            }
-        }
-        System.out.println();
-    }
 
     @BeforeEach
     private void init() {
@@ -32,36 +29,23 @@ class UnorderedArrayTest {
 
 
     @Test
-    public void insertTest() {
-        //Assertions.assertEquals(_array, actual);
+    public void insert_Item_To_Unorderedarray() {
+        _array.insert(50);
+        assertEquals(11, _array.size());
+        assertThat(_array, hasItem(50));
     }
 
-    public static void main(String[] args) {
-		int maxSize = 100;
-		var arr = new UnorderedArray<Integer>(maxSize);
+    @Test
+    public void delete_Item_From_Unorderedarray() {
+        _array.delete(77);
+        assertEquals(9, _array.size());
+        assertThat(_array, not(77));
+        assertThat(_array, not(50));
+    }
 
-		arr.insert(77); // insert 10 items
-		arr.insert(99);
-		arr.insert(44);
-		arr.insert(55);
-		arr.insert(22);
-		arr.insert(88);
-		arr.insert(11);
-		arr.insert(00);
-		arr.insert(66);
-		arr.insert(33);
-
-        display(arr);
-
-		int searchKey = 35; // search for item
-		if (arr.find(searchKey) >= 0)
-			System.out.println("Found " + searchKey);
-		else
-			System.out.println("Can't find " + searchKey);
-
-		// arr.delete(00); // delete 3 items
-		arr.delete(55);
-		arr.delete(99);
-        display(arr);
-	}
+    @Test
+    public void search_Item_In_Unorderedarray() {
+        assertTrue(_array.find(11) >= 0);
+        assertTrue(_array.find(12) == -1);
+    }
 }
