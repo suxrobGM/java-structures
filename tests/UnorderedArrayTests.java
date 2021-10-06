@@ -27,7 +27,6 @@ class UnorderedArrayTests {
 		_array.insert(33);
     }
 
-
     @Test
     public void insert_Item_To_Unorderedarray() {
         _array.insert(50);

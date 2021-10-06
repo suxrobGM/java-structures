@@ -27,7 +27,6 @@ public class OrderedArrayTests {
 		_array.insert(11);
     }
 
-
     @Test
     public void insert_Item_To_Orderedarray() {
         _array.insert(50);
@@ -47,7 +46,7 @@ public class OrderedArrayTests {
         assertThat(_array, not(44));
         assertEquals(9, _array.size());
         assertEquals(22, _array.getItemAt(6).intValue());
-        assertEquals(50, _array.getItemAt(7).intValue());
+        assertEquals(55, _array.getItemAt(7).intValue());
     }
 
     @Test

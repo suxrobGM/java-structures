@@ -1,15 +1,27 @@
 package collections;
 
+import java.util.Comparator;
+
 /**
  * Ordered array
  */
-public class OrderedArray<T extends Comparable<T>> extends AbstractArray<T> {
-   	
+public class OrderedArray<T> extends AbstractArray<T> {
+   	private Comparator<? super T> _comparator;
+
    	/**
      * Creates new instance of ordered array where default size is 10.
      */
+    @SuppressWarnings("unchecked")
     public OrderedArray() {
-        this(10);
+        this(10, (Comparator<T>)Comparator.naturalOrder());
+    }
+
+    /**
+     * Creates new instance of ordered array with default comparator.
+     */
+    @SuppressWarnings("unchecked")
+    public OrderedArray(int capacity) {
+        this(capacity, (Comparator<T>)Comparator.naturalOrder());
     }
     
     /**
@@ -17,9 +29,10 @@ public class OrderedArray<T extends Comparable<T>> extends AbstractArray<T> {
      * @param capacity is the size of array.
      */
     @SuppressWarnings("unchecked")
-   	public OrderedArray(int capacity) {
-    	_array = (T[])new Object[capacity]; 
+   	public OrderedArray(int capacity, Comparator<? super T> comparator) {
+    	_array = (T[])new Object[capacity];
       	_items = 0;
+        _comparator = comparator;
     }
 
     /**
@@ -35,14 +48,14 @@ public class OrderedArray<T extends Comparable<T>> extends AbstractArray<T> {
 		
         while(lowerBound <= upperBound) {
             middle = (lowerBound + upperBound) / 2;
-
-            if(_array[middle].compareTo(item) >= 1) {
+            
+            if(_comparator.compare(_array[middle], item) >= 1) {
                 upperBound = middle - 1;
             }
-            else if(_array[middle].compareTo(item) <= -1) {
+            else if(_comparator.compare(_array[middle], item) <= -1) {
                 lowerBound = middle + 1;
             }
-            else if(_array[middle].compareTo(item) == 0) {
+            else if(_comparator.compare(_array[middle], item) == 0) {
                 return middle;            
             }
         }
@@ -57,7 +70,7 @@ public class OrderedArray<T extends Comparable<T>> extends AbstractArray<T> {
    	public void insert(T item) {
 		int startIndex = _items;
 		for (int i = 0; i < _items; i++) {
-			if (_array[i].compareTo(item) >= 1) {
+			if (_comparator.compare(_array[i], item) >= 1) {
 				startIndex = i;
 				break;
 			}
