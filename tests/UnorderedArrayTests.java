@@ -38,8 +38,8 @@ class UnorderedArrayTests {
     public void delete_Item_From_Unorderedarray() {
         _array.delete(77);
         assertEquals(9, _array.size());
-        assertThat(_array, not(77));
-        assertThat(_array, not(50));
+        assertThat(_array, not(hasItem(77)));
+        assertThat(_array, not(hasItem(50)));
     }
 
     @Test

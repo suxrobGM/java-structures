@@ -6,7 +6,7 @@ import java.util.Iterator;
 /**
  * Abstract array
  */
-public abstract class AbstractArray<T> implements Iterable<T> {
+public abstract class AbstractArray<T> implements Iterable<T>, EnumerableCollection {
     protected T[] _array;
     protected int _items;  // actual number of items in the array.
 
@@ -51,6 +51,7 @@ public abstract class AbstractArray<T> implements Iterable<T> {
      * Checks arrays is empty or not.
      * @return True if array is empty, otherwise false.
      */
+    @Override
 	public boolean isEmpty() {
 		return _items == 0;
 	}
@@ -58,6 +59,7 @@ public abstract class AbstractArray<T> implements Iterable<T> {
     /**
      * Gets the length of the array.
      */
+    @Override
     public int size() {
         return _items;
     }

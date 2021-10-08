@@ -1,14 +1,6 @@
 package algorithms;
 
 public class Palindrome {
-	public static void main(String[] args){
-		String s1 = "abc";
-		String s2 = "kayak";
-		System.out.println("Is " + s1 + " a palindrome?: " + isPalindrome(s1));
-		System.out.println("Is " + s1 + " a palindrome?: " + isPalindrome(s2));
-		//System.out.println("Is " + s1 + " a palindrome?: " + isPalindrome(s2));
-	}
-	
 	public static boolean isPalindrome(String s){
 		if (s.length()%2 != 0) {
             return false;
@@ -23,5 +15,13 @@ public class Palindrome {
         }
 
 		return true;
+	}
+
+	public static void main(String[] args){
+		String s1 = "abc";
+		String s2 = "kayak";
+		System.out.println("Is " + s1 + " a palindrome?: " + isPalindrome(s1));
+		System.out.println("Is " + s2 + " a palindrome?: " + isPalindrome(s2));
+		//System.out.println("Is " + s1 + " a palindrome?: " + isPalindrome(s2));
 	}
 }

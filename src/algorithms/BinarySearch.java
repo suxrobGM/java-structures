@@ -33,7 +33,5 @@ public class BinarySearch {
 		} else {
 			System.out.println("Find it");
 		}
-
 	}
-
 }
