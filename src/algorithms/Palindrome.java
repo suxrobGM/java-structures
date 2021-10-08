@@ -1,19 +1,17 @@
 package algorithms;
 
 public class Palindrome {
-	public static boolean isPalindrome(String s){
-		if (s.length()%2 != 0) {
-            return false;
-        }
+	public static boolean isPalindrome(String str){
+		String cleanStr = str.replaceAll("\\s+", "").toLowerCase();
+		int forward = 0;
+		int backward = cleanStr.length() - 1;
 
-        char[] chars = s.toCharArray();
-        int n = chars.length;
-        for (int i = 0; i < n / 2; i++) {
-            if (chars[i] != chars[(n-1) - i]) {
-                return false;
-            }
-        }
-
+		while (backward > forward) {
+			char forwardChar = cleanStr.charAt(forward++);
+			char backwardChar = cleanStr.charAt(backward--);
+			if (forwardChar != backwardChar)
+				return false;
+		}
 		return true;
 	}
 
@@ -22,6 +20,5 @@ public class Palindrome {
 		String s2 = "kayak";
 		System.out.println("Is " + s1 + " a palindrome?: " + isPalindrome(s1));
 		System.out.println("Is " + s2 + " a palindrome?: " + isPalindrome(s2));
-		//System.out.println("Is " + s1 + " a palindrome?: " + isPalindrome(s2));
 	}
 }
