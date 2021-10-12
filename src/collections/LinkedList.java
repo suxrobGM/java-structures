@@ -51,8 +51,8 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
      * @param data to insert.
      * @implNote Time complexity: O(1)
      */
-    public void insertFront(T data) {
-        if (_headNode == null) {
+    public void addFront(T data) {
+        if (isEmpty()) {
             _headNode = new Node<T>(data);
             _lastNode = _headNode;
             _items++;
@@ -69,7 +69,12 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
      * @param data to insert.
      * @implNote Time complexity: O(1)
      */
-    public void insertBack(T data) {
+    public void addBack(T data) {
+        if (isEmpty()) {
+            addFront(data);
+            return;
+        }
+
         var lastNode = new Node<T>(data);
         _lastNode.next = lastNode;
         _lastNode = lastNode;
@@ -88,11 +93,11 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
             throw new IndexOutOfBoundsException();
         }
         else if (index == 0) {
-            insertFront(data);
+            addFront(data);
             return;
         }
         else if (index == _items - 1) {
-            insertBack(data);
+            addBack(data);
             return;
         }
 
@@ -239,5 +244,23 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
     @Override
     public Iterator<T> iterator() {
         return new LinkedListIterator();
+    }
+
+    @Override
+    public String toString() {
+        var strBuilder = new StringBuilder();
+        var count = 0;
+        strBuilder.append("[");
+
+        for(var item : this) {
+            count++;
+            strBuilder.append(item.toString());
+            if (count != _items) {
+                strBuilder.append(", ");
+            }
+        }
+        
+        strBuilder.append("]");
+        return strBuilder.toString();
     }
 }

@@ -41,7 +41,7 @@ public class UnorderedArray<T> extends AbstractArray<T> {
      * @implNote Time complexity: O(1)
      */
     @Override
-	public void insert(T item) {
+	public void add(T item) {
 		if (isFull()) {
 			throw new IndexOutOfBoundsException("Array is full");
 		}

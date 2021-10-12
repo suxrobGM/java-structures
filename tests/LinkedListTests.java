@@ -17,23 +17,23 @@ class LinkedListTests {
     @BeforeEach
     public void init() {
         _list = new LinkedList<>();
-        _list.insertFront(1);
-        _list.insertFront(2);
-        _list.insertFront(3);
-        _list.insertFront(4);
-        _list.insertFront(5);
+        _list.addFront(1);
+        _list.addFront(2);
+        _list.addFront(3);
+        _list.addFront(4);
+        _list.addFront(5);
     }
 
     @Test
     public void insertAtFront() {
-        _list.insertFront(0);
+        _list.addFront(0);
         assertEquals(6, _list.size());
         assertEquals(0, _list.peekFront());
     }
 
     @Test
     public void insertAtBack() {
-        _list.insertBack(10);
+        _list.addBack(10);
         assertEquals(6, _list.size());
         assertEquals(10, _list.peekBack());
     }
@@ -71,7 +71,7 @@ class LinkedListTests {
 
     @Test
     public void deleteFromFront() {
-        _list.removeFront();
+        var removedItem = _list.removeFront();
         assertEquals(4, _list.size());
         assertEquals(4, _list.peekFront());
         assertThat(_list, not(hasItem(5)));

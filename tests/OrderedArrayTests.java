@@ -15,21 +15,21 @@ public class OrderedArrayTests {
     @BeforeEach
     private void init() {
         _array = new OrderedArray<Integer>(100);
-        _array.insert(5); // insert 10 items
-		_array.insert(4); 
-		_array.insert(0);
-		_array.insert(2);
-		_array.insert(5);
-		_array.insert(44);
-		_array.insert(55);
-		_array.insert(22);
-		_array.insert(88);
-		_array.insert(11);
+        _array.add(5); // insert 10 items
+		_array.add(4); 
+		_array.add(0);
+		_array.add(2);
+		_array.add(5);
+		_array.add(44);
+		_array.add(55);
+		_array.add(22);
+		_array.add(88);
+		_array.add(11);
     }
 
     @Test
     public void insertItem_To_OrderedArray() {
-        _array.insert(50);
+        _array.add(50);
         // content of the array should be {0, 2, 4, 5, 5, 11, 22, 44, 50, 55, 88}
 
         assertThat(_array, hasItem(50));

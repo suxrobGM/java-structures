@@ -1,71 +1,64 @@
 package collections;
 
-import java.util.Arrays;
-import java.util.EmptyStackException;
 import java.util.Iterator;
 
+/**
+ * Stack represends the data structure LIFO (last in first out)
+ */
 public class Stack<T> implements Iterable<T>, EnumerableCollection {
-    private T[] _array;
-    private int _items;
-    private int _capacity;
+    private LinkedList<T> _list;
     
+    /**
+     * Creates new instance of stack.
+     */
     public Stack() {
-        this(100); // default capacity
+        _list = new LinkedList<>();
     }
 
-    @SuppressWarnings("unchecked")
-    public Stack(int capacity) {
-        _capacity = capacity; // initial capacity
-        _array = (T[])new Object[_capacity];
-        _items = 0;
-    }
-
+    /**
+     * Adds item to the top of stack.
+     * @param data
+     */
     public void push(T data) {
-        if (_items - 1 == _capacity) {
-            growArray();
-        }
-
-        _array[_items++] = data;
+        _list.addFront(data);
     }
 
+    /**
+     * Deletes the top item from stack.
+     * @return deleted item
+     */
     public T pop() {
-        if (isEmpty()) {
-            throw new EmptyStackException();
-        }
-        
-        return _array[--_items];
+        return _list.removeFront();
     }
 
+    /**
+     * Gets value of the top item in stack.
+     * @implNote Time complexity: O(1)
+     */
     public T peek() {
-        if (isEmpty()) {
-            throw new EmptyStackException();
-        }
-        return _array[_items - 1];
-    }
-    
-    @SuppressWarnings("unchecked")
-    private void growArray() {
-        _capacity *= 2;
-        var temp = _array;
-        _array = (T[])new Object[_capacity];
-
-        for (int i = 0; i < temp.length; i++) {
-            _array[i] = temp[i];
-        }
+        return _list.peekFront();
     }
 
+    /**
+     * Checks whether stack is empty or not.
+     * @implNote Time complexity: O(1)
+     */
     @Override
     public boolean isEmpty() {
-        return _items == 0;
+        return _list.isEmpty();
     }
 
+    /**
+     * Gets the size of stack.
+     * @implNote Time complexity: O(1)
+     */
     @Override
     public int size() {
-        return _items;
+        return _list.size();
     }
 
     @Override
     public Iterator<T> iterator() {
-        return Arrays.stream(_array).limit(_items).iterator();
+        return _list.iterator();
     }
 }

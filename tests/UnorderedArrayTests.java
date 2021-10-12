@@ -15,21 +15,21 @@ class UnorderedArrayTests {
     @BeforeEach
     private void init() {
         _array = new UnorderedArray<Integer>(100);
-        _array.insert(77); // insert 10 items
-		_array.insert(99);
-		_array.insert(44);
-		_array.insert(55);
-		_array.insert(22);
-		_array.insert(88);
-		_array.insert(11);
-		_array.insert(00);
-		_array.insert(66);
-		_array.insert(33);
+        _array.add(77); // insert 10 items
+		_array.add(99);
+		_array.add(44);
+		_array.add(55);
+		_array.add(22);
+		_array.add(88);
+		_array.add(11);
+		_array.add(00);
+		_array.add(66);
+		_array.add(33);
     }
 
     @Test
     public void insertItem_To_UnorderedArray() {
-        _array.insert(50);
+        _array.add(50);
         assertEquals(11, _array.size());
         assertThat(_array, hasItem(50));
     }

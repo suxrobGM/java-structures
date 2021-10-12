@@ -15,7 +15,7 @@ public abstract class AbstractArray<T> implements Iterable<T>, EnumerableCollect
      * @param item item to add in the array.
      * @exception IndexOutOfBoundsException Throws if array is full.
      */
-    public abstract void insert(T data);
+    public abstract void add(T data);
 
     /**
      * Deletes first occured element from array.

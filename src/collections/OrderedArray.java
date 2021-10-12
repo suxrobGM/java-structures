@@ -67,7 +67,7 @@ public class OrderedArray<T> extends AbstractArray<T> {
      * @implNote Time complexity: O(n)
      */
     @Override
-   	public void insert(T item) {
+   	public void add(T item) {
 		int startIndex = _items;
 		for (int i = 0; i < _items; i++) {
 			if (_comparator.compare(_array[i], item) >= 1) {
