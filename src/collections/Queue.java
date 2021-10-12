@@ -1,9 +1,11 @@
 package collections;
 
+import java.util.Iterator;
+
 /**
  * Queue represends the data structure FIFO (first in first out)
  */
-public class Queue<T> implements EnumerableCollection {
+public class Queue<T> implements Iterable<T>, EnumerableCollection {
     private LinkedList<T> _list;
 
     /**
@@ -52,5 +54,10 @@ public class Queue<T> implements EnumerableCollection {
     @Override
     public int size() {
         return _list.size();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return _list.iterator();
     }
 }
