@@ -22,7 +22,7 @@ public abstract class AbstractArray<T> implements Iterable<T>, EnumerableCollect
      * @param item to delete
      * @return True if item was deleted successfully, otherwise false.
      */
-    public abstract boolean delete(T item);
+    public abstract boolean remove(T item);
 
     /**
      * Searchs element in array

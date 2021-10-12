@@ -51,7 +51,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
      * @param data to insert.
      * @implNote Time complexity: O(1)
      */
-    public void insertAtFront(T data) {
+    public void insertFront(T data) {
         if (_headNode == null) {
             _headNode = new Node<T>(data);
             _lastNode = _headNode;
@@ -69,7 +69,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
      * @param data to insert.
      * @implNote Time complexity: O(1)
      */
-    public void insertAtBack(T data) {
+    public void insertBack(T data) {
         var lastNode = new Node<T>(data);
         _lastNode.next = lastNode;
         _lastNode = lastNode;
@@ -88,11 +88,11 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
             throw new IndexOutOfBoundsException();
         }
         else if (index == 0) {
-            insertAtFront(data);
+            insertFront(data);
             return;
         }
         else if (index == _items - 1) {
-            insertAtBack(data);
+            insertBack(data);
             return;
         }
 
@@ -132,22 +132,22 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
     }
 
     /**
-     * Removes the first item that occurs from the list, if it is in the list.
+     * Removes the first occured item from the list, if it contains in the list.
      * @param item to delete.
      * @implNote Time complexity O(n)
      */
-    public void deleteItem(T item) {
+    public void remove(T item) {
         var index = find(item);
 
         if (index == -1) {
             return;
         }
         else if (index == 0) {
-            deleteFront();
+            removeFront();
             return;
         }
         else if (index == _items - 1) {
-            deleteBack();
+            removeBack();
             return;
         }
 
@@ -169,23 +169,27 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
     /**
      * Deletes node from front of the list.
      * @implNote Time complexity: O(1)
+     * @return data of the removed node. If list is empty then returns null.
      */
-    public void deleteFront() {
+    public T removeFront() {
         if (isEmpty()) {
-            return;
+            return null;
         }
 
+        var removedNode = _headNode;
         _headNode = _headNode.next;
         _items--;
+        return removedNode.data;
     }
 
     /**
      * Deletes node from rear of the list.
      * @implNote Time complexity: O(n)
+     * @return data of the removed node. If list is empty then returns null.
      */
-    public void deleteBack() {
+    public T removeBack() {
         if (isEmpty()) {
-            return;
+            return null;
         }
 
         var currentNode = _headNode;
@@ -193,9 +197,11 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
             currentNode = currentNode.next;
         }
 
+        var removedNode = _lastNode;
         _lastNode = currentNode;
         _lastNode.next = null;
         _items--;
+        return removedNode.data;
     }
 
     /**

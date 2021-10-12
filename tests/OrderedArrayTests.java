@@ -28,7 +28,7 @@ public class OrderedArrayTests {
     }
 
     @Test
-    public void insert_Item_To_Orderedarray() {
+    public void insertItem_To_OrderedArray() {
         _array.insert(50);
         // content of the array should be {0, 2, 4, 5, 5, 11, 22, 44, 50, 55, 88}
 
@@ -39,8 +39,8 @@ public class OrderedArrayTests {
     }
 
     @Test
-    public void delete_Item_From_Orderedarray() {
-        _array.delete(44);
+    public void deleteItem_From_OrderedArray() {
+        _array.remove(44);
         // content of the array should be {0, 2, 4, 5, 5, 11, 22, 55, 88}
 
         assertThat(_array, not(44));
@@ -50,7 +50,7 @@ public class OrderedArrayTests {
     }
 
     @Test
-    public void search_Item_In_Orderedarray() {
+    public void searchItem_In_OrderedArray() {
         assertTrue(_array.find(11) >= 0);
         assertTrue(_array.find(12) == -1);
     }

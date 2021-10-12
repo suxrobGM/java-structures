@@ -55,7 +55,7 @@ public class UnorderedArray<T> extends AbstractArray<T> {
      * @implNote Time complexity: O(n)
      */
     @Override
-	public boolean delete(T item) {
+	public boolean remove(T item) {
 		int itemIndex = -1;
 		for (int i = 0; i < _items; i++) {
 			if (_array[i] == item) {

@@ -28,22 +28,22 @@ class UnorderedArrayTests {
     }
 
     @Test
-    public void insert_Item_To_Unorderedarray() {
+    public void insertItem_To_UnorderedArray() {
         _array.insert(50);
         assertEquals(11, _array.size());
         assertThat(_array, hasItem(50));
     }
 
     @Test
-    public void delete_Item_From_Unorderedarray() {
-        _array.delete(77);
+    public void deleteItem_From_UnorderedArray() {
+        _array.remove(77);
         assertEquals(9, _array.size());
         assertThat(_array, not(hasItem(77)));
         assertThat(_array, not(hasItem(50)));
     }
 
     @Test
-    public void search_Item_In_Unorderedarray() {
+    public void searchItem_In_UnorderedArray() {
         assertTrue(_array.find(11) >= 0);
         assertTrue(_array.find(12) == -1);
     }

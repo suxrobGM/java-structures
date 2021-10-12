@@ -86,7 +86,7 @@ public class OrderedArray<T> extends AbstractArray<T> {
      * @implNote Time complexity: O(n)
      */
     @Override
-   	public boolean delete(T item) {
+   	public boolean remove(T item) {
     	int itemIndex = find(item);
 		
 		if (itemIndex == -1) {
