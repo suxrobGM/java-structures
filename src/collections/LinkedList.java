@@ -2,7 +2,7 @@ package collections;
 import java.util.Iterator;
 
 /**
- * Single linked list
+ * LinkedList represents a sinlge linked list data structure.
  */
 public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
     private Node<T> _headNode;
@@ -15,6 +15,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
     public LinkedList() {
         _headNode = null;
         _lastNode = null;
+        _items = 0;
     }
 
     /**

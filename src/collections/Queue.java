@@ -3,7 +3,7 @@ package collections;
 import java.util.Iterator;
 
 /**
- * Queue represends the data structure FIFO (first in first out)
+ * Queue represents the FIFO (first in first out) data sructure.
  */
 public class Queue<T> implements Iterable<T>, EnumerableCollection {
     private LinkedList<T> _list;

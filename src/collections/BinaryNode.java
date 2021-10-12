@@ -4,8 +4,18 @@ package collections;
  * Binary node represends data structure where save itself 
  * reference to the next node and previous node;
  */
-public class BinaryNode<T> extends Node<T> {
+public class BinaryNode<T> {
     
+    /**
+     * Data
+     */
+    public T data;
+
+    /**
+     * Reference to next node.
+     */
+    public BinaryNode<T> next;
+
     /**
      * Reference to previous node.
      */
@@ -37,7 +47,8 @@ public class BinaryNode<T> extends Node<T> {
      * @param prev - reference of the previous node.
      */
     public BinaryNode(T data, BinaryNode<T> next, BinaryNode<T> prev) {
-        super(data, next);
+        this.data = data;
+        this.next = next;
         this.prev = prev;
     }
 }

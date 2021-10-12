@@ -3,7 +3,7 @@ package collections;
 import java.util.Iterator;
 
 /**
- * Stack represends the data structure LIFO (last in first out)
+ * Stack represents the LIFO (last in first out) data structure.
  */
 public class Stack<T> implements Iterable<T>, EnumerableCollection {
     private LinkedList<T> _list;
