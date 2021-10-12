@@ -135,7 +135,7 @@ public class Deque<T> implements EnumerableCollection, Iterable<T> {
     }
 
     /**
-     * Gets front node from the list.
+     * Gets the front node from the list.
      * @implNote Time complexity: O(1)
      */
     public T peekFront() {
@@ -146,7 +146,97 @@ public class Deque<T> implements EnumerableCollection, Iterable<T> {
     }
 
     /**
-     * Gets last node from the list
+     * Inserts data at specified position in the list.
+     * @param data to insert.
+     * @param index of the nth position to insert.
+     * @exception IndexOutOfBoundsException Throws if given index is higher than length of the list.
+     * @implNote Time complexity: O(n)
+     */
+    public void insertAt(T data, int index) {
+        if (index < 0 || index >= _items) {
+            throw new IndexOutOfBoundsException();
+        }
+        else if (index == 0) {
+            addFront(data);
+            return;
+        }
+        else if (index == _items - 1) {
+            addBack(data);
+            return;
+        }
+
+        var currentNode = _headNode;
+
+        for (int i = 1; i < index; i++) {
+            if (currentNode == null) {
+                throw new IndexOutOfBoundsException();
+            }
+
+            currentNode = currentNode.next;
+        }
+
+        var nextNode = currentNode.next;
+        currentNode.next = new BinaryNode<T>(data, nextNode, currentNode);
+        _items++;
+    }
+
+    /**
+     * Searches specified data from linked list.
+     * @param data to find.
+     * @return position of the node in linked list. 
+     * If could not find then returns -1
+     * @implNote Time complexity O(n)
+     */
+    public int find(T data) {
+        var idx = 0;
+
+        for (var item : this) {
+            if (item.equals(data)) {
+                return idx;
+            }
+            idx++;
+        }
+
+        return -1;
+    }
+
+    /**
+     * Removes the first occured item from the list, if it contains in the list.
+     * @param item to delete.
+     * @implNote Time complexity O(n)
+     */
+    public void remove(T item) {
+        var index = find(item);
+
+        if (index == -1) {
+            return;
+        }
+        else if (index == 0) {
+            removeFront();
+            return;
+        }
+        else if (index == _items - 1) {
+            removeBack();
+            return;
+        }
+
+        var currentNode = _headNode;
+
+        for (int i = 1; i < index; i++) {
+            if (currentNode == null) {
+                return;
+            }
+
+            currentNode = currentNode.next;
+        }
+
+        var nextNode = currentNode.next.next;
+        currentNode.next = nextNode;
+        _items--;
+    }
+
+    /**
+     * Gets the last node from the list.
      * @implNote Time complexity: O(1)
      */
     public T peekBack() {

@@ -211,7 +211,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
     }
 
     /**
-     * Gets front node from the list.
+     * Gets the front node from the list.
      * @implNote Time complexity: O(1)
      */
     public T peekFront() {
@@ -222,7 +222,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
     }
 
     /**
-     * Gets last node from the list
+     * Gets the last node from the list
      * @implNote Time complexity: O(1)
      */
     public T peekBack() {

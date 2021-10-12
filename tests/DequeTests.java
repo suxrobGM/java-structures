@@ -9,14 +9,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import collections.LinkedList;
 
-class LinkedListTests {
-    private LinkedList<Integer> _list;
+import collections.Deque;
+
+public class DequeTests {
+    private Deque<Integer> _list;
 
     @BeforeEach
     public void init() {
-        _list = new LinkedList<>();
+        _list = new Deque<>();
         _list.addFront(1);
         _list.addFront(2);
         _list.addFront(3);
@@ -43,6 +44,7 @@ class LinkedListTests {
         _list.insertAt(20, 0); // at front
         _list.insertAt(21, 3);
         _list.insertAt(22, _list.size() - 1); // at back
+        System.out.println(_list.toString());
 
         assertEquals(8, _list.size());
         assertThat(_list, hasItem(20));
