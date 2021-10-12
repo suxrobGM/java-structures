@@ -27,7 +27,7 @@ public abstract class AbstractArray<T> implements Iterable<T>, EnumerableCollect
     /**
      * Searchs element in array
      * @param item to search in array
-     * @return index of found element. 
+     * @return index of found element.
      * If could not find then returns -1
      */
     public abstract int find(T item);
@@ -43,19 +43,19 @@ public abstract class AbstractArray<T> implements Iterable<T>, EnumerableCollect
      * Checks wheter array is full or not.
      * @return True if array is full, otherwise false.
      */
-	public boolean isFull() {
-		return _items == _array.length - 1;
-	}
-	
+    public boolean isFull() {
+        return _items == _array.length - 1;
+    }
+
     /**
      * Checks arrays is empty or not.
      * @return True if array is empty, otherwise false.
      */
     @Override
-	public boolean isEmpty() {
-		return _items == 0;
-	}
-    
+    public boolean isEmpty() {
+        return _items == 0;
+    }
+
     /**
      * Gets the length of the array.
      */
@@ -68,30 +68,30 @@ public abstract class AbstractArray<T> implements Iterable<T>, EnumerableCollect
     public Iterator<T> iterator() {
         return Arrays.stream(_array).iterator();
     }
-    
+
     /**
      * Moves items to left side from index of the specified item to index of the last item.
      * @implNote Time complexity: O(n)
      * @param startIndex
      */
-	protected final void leftShift(int startIndex) {
-		T firstItem = _array[startIndex];
-		for (int i = startIndex; i < _items; i++) {
-			_array[i] = _array[i+1];
-		}
-		_array[_items - 1] = firstItem;
-	}
+    protected final void leftShift(int startIndex) {
+        T firstItem = _array[startIndex];
+        for (int i = startIndex; i < _items; i++) {
+            _array[i] = _array[i+1];
+        }
+        _array[_items - 1] = firstItem;
+    }
 
     /**
      * Moves items to right side from index of the last item to index of the specified item.
      * @implNote Time complexity: O(n)
      * @param startIndex
      */
-	protected final void rightShift(int startIndex) {
-		T lastItem = _array[_items - 1];
-		for (int i = _items; i > startIndex; i--) {
-			_array[i] = _array[i-1];
-		}
-		_array[startIndex] = lastItem;
-	}
+    protected final void rightShift(int startIndex) {
+        T lastItem = _array[_items - 1];
+        for (int i = _items; i > startIndex; i--) {
+            _array[i] = _array[i-1];
+        }
+        _array[startIndex] = lastItem;
+    }
 }

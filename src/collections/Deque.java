@@ -35,7 +35,7 @@ public class Deque<T> implements EnumerableCollection, Iterable<T> {
         public boolean hasNext() {
             return _current != null && _current.next != null;
         }
-    
+
         @Override
         public T next() {
             if (_firstIteration) {
@@ -56,16 +56,16 @@ public class Deque<T> implements EnumerableCollection, Iterable<T> {
     public void addFront(T data) {
         var newNode = new BinaryNode<T>(data);
 
-		if (isEmpty()) {
-			_headNode = _lastNode = newNode;
-			_items++;
-			return;
-		}
+        if (isEmpty()) {
+            _headNode = _lastNode = newNode;
+            _items++;
+            return;
+        }
 
         newNode.next = _headNode;
         _headNode.prev = newNode;
         _headNode = newNode;
-		_items++;
+        _items++;
     }
 
     /**
@@ -75,15 +75,15 @@ public class Deque<T> implements EnumerableCollection, Iterable<T> {
      */
     public void addBack(T data) {
         if (isEmpty()) {
-			addFront(data);
-			return;
-		}
+            addFront(data);
+            return;
+        }
 
-		var newNode = new BinaryNode<>(data);
-		newNode.prev = _lastNode;
-		_lastNode.next = newNode;
-		_lastNode = newNode;
-		_items++;
+        var newNode = new BinaryNode<>(data);
+        newNode.prev = _lastNode;
+        _lastNode.next = newNode;
+        _lastNode = newNode;
+        _items++;
     }
 
     /**
@@ -93,21 +93,21 @@ public class Deque<T> implements EnumerableCollection, Iterable<T> {
      */
     public T removeFront() {
         if (isEmpty()) {
-			return null;
-		}
+            return null;
+        }
 
-		var firstNode = _headNode;
+        var firstNode = _headNode;
 
-		if (_items == 1) {
-			_headNode = _lastNode = null;
-			_items--;
-			return firstNode.data;
-		}
+        if (_items == 1) {
+            _headNode = _lastNode = null;
+            _items--;
+            return firstNode.data;
+        }
 
-		_headNode = _headNode.next;
-		_headNode.prev = null;
-		_items--;
-		return firstNode.data;
+        _headNode = _headNode.next;
+        _headNode.prev = null;
+        _items--;
+        return firstNode.data;
     }
 
     /**
@@ -117,21 +117,21 @@ public class Deque<T> implements EnumerableCollection, Iterable<T> {
      */
     public T removeBack() {
         if (isEmpty()) {
-			return null;
-		}
+            return null;
+        }
 
-		var lastNode = _lastNode;
+        var lastNode = _lastNode;
 
-		if (_items == 1) {
-			_headNode = _lastNode = null;
-			_items--;
-			return lastNode.data;
-		}
+        if (_items == 1) {
+            _headNode = _lastNode = null;
+            _items--;
+            return lastNode.data;
+        }
 
-		_lastNode = _lastNode.prev;
-		_lastNode.next = null;
-		_items--;
-		return _lastNode.data;
+        _lastNode = _lastNode.prev;
+        _lastNode.next = null;
+        _items--;
+        return _lastNode.data;
     }
 
     /**
@@ -183,7 +183,7 @@ public class Deque<T> implements EnumerableCollection, Iterable<T> {
     /**
      * Searches specified data from linked list.
      * @param data to find.
-     * @return position of the node in linked list. 
+     * @return position of the node in linked list.
      * If could not find then returns -1
      * @implNote Time complexity O(n)
      */
@@ -274,7 +274,7 @@ public class Deque<T> implements EnumerableCollection, Iterable<T> {
                 strBuilder.append(", ");
             }
         }
-        
+
         strBuilder.append("]");
         return strBuilder.toString();
     }

@@ -1,11 +1,11 @@
 package collections;
 
 /**
- * Binary node represends data structure where save itself 
+ * Binary node represends data structure where save itself
  * reference to the next node and previous node;
  */
 public class BinaryNode<T> {
-    
+
     /**
      * Data
      */
@@ -38,7 +38,7 @@ public class BinaryNode<T> {
     public BinaryNode(T data, BinaryNode<T> next) {
         this(data, next, null);
     }
-    
+
     /**
      * Creates new instance of binary node given data
      * and references to next and previous binary nodes.

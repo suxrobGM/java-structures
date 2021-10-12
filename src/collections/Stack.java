@@ -7,7 +7,7 @@ import java.util.Iterator;
  */
 public class Stack<T> implements Iterable<T>, EnumerableCollection {
     private LinkedList<T> _list;
-    
+
     /**
      * Creates new instance of stack.
      */

@@ -6,7 +6,7 @@ package collections;
 public class PriorityQueue<T> implements EnumerableCollection {
 
     public void endqueue(T data) {
-        
+
     }
 
     public T dequeue() {
@@ -27,5 +27,5 @@ public class PriorityQueue<T> implements EnumerableCollection {
     public int size() {
         // TODO Auto-generated method stub
         return 0;
-    } 
+    }
 }

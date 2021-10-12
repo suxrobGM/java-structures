@@ -16,15 +16,15 @@ public class OrderedArrayTests {
     private void init() {
         _array = new OrderedArray<Integer>(100);
         _array.add(5); // insert 10 items
-		_array.add(4); 
-		_array.add(0);
-		_array.add(2);
-		_array.add(5);
-		_array.add(44);
-		_array.add(55);
-		_array.add(22);
-		_array.add(88);
-		_array.add(11);
+        _array.add(4);
+        _array.add(0);
+        _array.add(2);
+        _array.add(5);
+        _array.add(44);
+        _array.add(55);
+        _array.add(22);
+        _array.add(88);
+        _array.add(11);
     }
 
     @Test

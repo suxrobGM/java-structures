@@ -16,15 +16,15 @@ class UnorderedArrayTests {
     private void init() {
         _array = new UnorderedArray<Integer>(100);
         _array.add(77); // insert 10 items
-		_array.add(99);
-		_array.add(44);
-		_array.add(55);
-		_array.add(22);
-		_array.add(88);
-		_array.add(11);
-		_array.add(00);
-		_array.add(66);
-		_array.add(33);
+        _array.add(99);
+        _array.add(44);
+        _array.add(55);
+        _array.add(22);
+        _array.add(88);
+        _array.add(11);
+        _array.add(00);
+        _array.add(66);
+        _array.add(33);
     }
 
     @Test

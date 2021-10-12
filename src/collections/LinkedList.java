@@ -8,7 +8,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
     private Node<T> _headNode;
     private Node<T> _lastNode;
     private int _items;
-    
+
     /**
      * Creates new instance of LinkedList<T>
      */
@@ -34,7 +34,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
         public boolean hasNext() {
             return _current != null && _current.next != null;
         }
-    
+
         @Override
         public T next() {
             if (_firstIteration) {
@@ -120,7 +120,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
     /**
      * Searches specified data from linked list.
      * @param data to find.
-     * @return position of the node in linked list. 
+     * @return position of the node in linked list.
      * If could not find then returns -1
      * @implNote Time complexity O(n)
      */
@@ -260,7 +260,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
                 strBuilder.append(", ");
             }
         }
-        
+
         strBuilder.append("]");
         return strBuilder.toString();
     }

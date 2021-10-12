@@ -1,7 +1,7 @@
 package collections;
 
 /**
- * Single node represends data structure where save itself 
+ * Single node represends data structure where save itself
  * reference to the next node
  */
 public class Node<T> {
