@@ -118,7 +118,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
      * If could not find then returns -1
      * @implNote Time complexity O(n)
      */
-    public int search(T data) {
+    public int find(T data) {
         var idx = 0;
 
         for (var item : this) {
@@ -137,7 +137,7 @@ public class LinkedList<T> implements Iterable<T>, EnumerableCollection {
      * @implNote Time complexity O(n)
      */
     public void deleteItem(T item) {
-        var index = search(item);
+        var index = find(item);
 
         if (index == -1) {
             return;

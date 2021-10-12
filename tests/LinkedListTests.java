@@ -96,8 +96,8 @@ class LinkedListTests {
 
     @Test
     public void search_Test() {
-        assertTrue(_list.search(2) >= 0);
-        assertTrue(_list.search(5) >= 0);
-        assertTrue(_list.search(8) == -1);
+        assertTrue(_list.find(2) >= 0);
+        assertTrue(_list.find(5) >= 0);
+        assertTrue(_list.find(8) == -1);
     }
 }
