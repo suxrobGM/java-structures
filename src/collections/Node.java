@@ -1,8 +1,8 @@
 package collections;
 
 /**
- * Single node represends data structure where save itself
- * reference to the next node
+ * Node represends data structure where save itself
+ * reference to the next and previous node.
  */
 public class Node<T> {
     /**
@@ -16,22 +16,39 @@ public class Node<T> {
     public Node<T> next;
 
     /**
-     * Creates new instance of single node from given data.
-     * @param data to store in node.
+     * Reference to previous node.
+     */
+    public Node<T> prev;
+
+    /**
+     * Creates new instance of binary node given data.
+     * @param data to store in binary node.
      */
     public Node(T data) {
-        this(data, null);
+        this(data, null, null);
     }
 
     /**
-     * Creates new instance of single node from given data
-     * and reference to next node.
-     * @param data to store in node.
+     * Creates new instance of binary node given data
+     * and reference to next binary node.
+     * @param data to store in binary node.
      * @param next - reference of the next node.
      */
     public Node(T data, Node<T> next) {
+        this(data, next, null);
+    }
+
+    /**
+     * Creates new instance of binary node given data
+     * and references to next and previous binary nodes.
+     * @param data to store in binary node.
+     * @param next - reference of the next node.
+     * @param prev - reference of the previous node.
+     */
+    public Node(T data, Node<T> next, Node<T> prev) {
         this.data = data;
         this.next = next;
+        this.prev = prev;
     }
 
     @Override

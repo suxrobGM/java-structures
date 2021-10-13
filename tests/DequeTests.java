@@ -44,7 +44,6 @@ public class DequeTests {
         _list.insertAt(20, 0); // at front
         _list.insertAt(21, 3);
         _list.insertAt(22, _list.size() - 1); // at back
-        System.out.println(_list.toString());
 
         assertEquals(8, _list.size());
         assertThat(_list, hasItem(20));

@@ -29,9 +29,5 @@ public class StackTests {
         var item = _stack.pop();
         assertEquals(4, _stack.size());
         assertEquals(5, item);
-
-        for (var it : _stack) {
-            System.out.println(it);
-        }
     }
 }
