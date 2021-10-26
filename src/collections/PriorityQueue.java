@@ -4,6 +4,7 @@ package collections;
  * PriorityQueue
  */
 public class PriorityQueue<T> implements EnumerableCollection {
+    
 
     public void endqueue(T data) {
 
