@@ -1,6 +1,6 @@
 package collections;
 
-public interface EnumerableCollection {
+public interface CountableCollection {
     /**
      * Checks collection is empty or not.
      * @return True if collection is empty, otherwise false.

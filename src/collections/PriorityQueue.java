@@ -3,7 +3,7 @@ package collections;
 /**
  * PriorityQueue
  */
-public class PriorityQueue<T> implements EnumerableCollection {
+public class PriorityQueue<T> implements CountableCollection {
     
 
     public void endqueue(T data) {

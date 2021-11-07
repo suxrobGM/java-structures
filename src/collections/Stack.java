@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Stack represents the LIFO (last in first out) data structure.
  */
-public class Stack<T> implements Iterable<T>, EnumerableCollection {
+public class Stack<T> implements Iterable<T>, CountableCollection {
     private LinkedList<T> _list;
 
     /**

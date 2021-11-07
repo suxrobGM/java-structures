@@ -11,12 +11,12 @@ public class Node<T> {
     public T data;
 
     /**
-     * Reference to next node.
+     * Reference to next node. (or right node)
      */
     public Node<T> next;
 
     /**
-     * Reference to previous node.
+     * Reference to previous node. (or left node)
      */
     public Node<T> prev;
 

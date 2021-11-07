@@ -2,7 +2,7 @@ package collections;
 
 import java.util.Iterator;
 
-public abstract class AbstractLinkedList<T> implements EnumerableCollection, Iterable<T> {
+public abstract class AbstractLinkedList<T> implements CountableCollection, Iterable<T> {
     protected Node<T> _headNode;
     protected Node<T> _lastNode;
     protected int _items;

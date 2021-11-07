@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Queue represents the FIFO (first in first out) data sructure.
  */
-public class Queue<T> implements Iterable<T>, EnumerableCollection {
+public class Queue<T> implements Iterable<T>, CountableCollection {
     private LinkedList<T> _list;
 
     /**

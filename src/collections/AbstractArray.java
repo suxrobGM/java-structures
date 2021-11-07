@@ -6,7 +6,7 @@ import java.util.Iterator;
 /**
  * Abstract array
  */
-public abstract class AbstractArray<T> implements Iterable<T>, EnumerableCollection {
+public abstract class AbstractArray<T> implements Iterable<T>, CountableCollection {
     protected T[] _array;
     protected int _items;  // actual number of items in the array.
 

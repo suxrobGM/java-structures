@@ -29,7 +29,7 @@ public class InsertionSort {
     }
 
     public static void main(String[] args) {
-        var array = new int[] {7, 10, 3, 0, 6, 5, 11, 4, 6};
+        var array = new int[] {7, 12, 0, 10, 6, 3, 5, 2, 5};
         sort(array);
         System.out.println("\nSorted array:");
         displayArray(array);

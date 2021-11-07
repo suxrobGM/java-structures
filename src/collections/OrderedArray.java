@@ -6,7 +6,7 @@ import java.util.Comparator;
  * Ordered array
  */
 public class OrderedArray<T> extends AbstractArray<T> {
-       private Comparator<? super T> _comparator;
+    private Comparator<? super T> _comparator;
 
        /**
      * Creates new instance of ordered array where default size is 10.
