@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import collections.UnorderedArray;
 
 class UnorderedArrayTests {
-
     private UnorderedArray<Integer> _array;
 
     @BeforeEach

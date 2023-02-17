@@ -31,7 +31,7 @@ public class OrderedArray<T> extends AbstractArray<T> {
     @SuppressWarnings("unchecked")
     public OrderedArray(int capacity, Comparator<? super T> comparator) {
         _array = (T[])new Object[capacity];
-          _items = 0;
+        _items = 0;
         _comparator = comparator;
     }
 
