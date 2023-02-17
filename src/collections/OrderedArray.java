@@ -29,7 +29,7 @@ public class OrderedArray<T> extends AbstractArray<T> {
      * @param capacity is the size of array.
      */
     @SuppressWarnings("unchecked")
-       public OrderedArray(int capacity, Comparator<? super T> comparator) {
+    public OrderedArray(int capacity, Comparator<? super T> comparator) {
         _array = (T[])new Object[capacity];
           _items = 0;
         _comparator = comparator;
@@ -41,7 +41,7 @@ public class OrderedArray<T> extends AbstractArray<T> {
      * @implNote Time complexity: O(log(n))
      */
     @Override
-       public int find(T item) {
+    public int find(T item) {
         int lowerBound = 0;
         int upperBound = _items;
         int middle = (lowerBound + upperBound) / 2;
@@ -67,7 +67,7 @@ public class OrderedArray<T> extends AbstractArray<T> {
      * @implNote Time complexity: O(n)
      */
     @Override
-       public void add(T item) {
+    public void add(T item) {
         int startIndex = _items;
         for (int i = 0; i < _items; i++) {
             if (_comparator.compare(_array[i], item) >= 1) {
@@ -86,7 +86,7 @@ public class OrderedArray<T> extends AbstractArray<T> {
      * @implNote Time complexity: O(n)
      */
     @Override
-       public boolean remove(T item) {
+    public boolean remove(T item) {
         int itemIndex = find(item);
 
         if (itemIndex == -1) {
