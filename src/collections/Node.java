@@ -16,6 +16,11 @@ public class Node<T> {
     public Node<T> next;
 
     /**
+     * Reference to previous node. (or left node)
+     */
+    public Node<T> prev;
+
+    /**
      * Creates new instance of binary node given data.
      * @param data to store in binary node.
      */
@@ -45,11 +50,6 @@ public class Node<T> {
         this.next = next;
         this.prev = prev;
     }
-
-    /**
-     * Reference to previous node. (or left node)
-     */
-    public Node<T> prev;
 
     @Override
     public String toString() {
