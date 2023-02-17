@@ -2,8 +2,8 @@ package algorithms;
 
 public class BubbleSort {
     public static void sort(int[] array) {
-        int n = array.length;
-        boolean swapped = false;
+        var n = array.length;
+        var swapped = false;
 
         for (int i = 0; i < n - 1; i++) {
             swapped = false;
@@ -25,13 +25,13 @@ public class BubbleSort {
     }
 
     private static void swap(int[] array, int index1, int index2) {
-        int temp = array[index1];
+        var temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
     }
 
     private static void displayArray(int[] array) {
-        for (int i : array) {
+        for (var i : array) {
             System.out.print(i + " ");
         }
         System.out.println();

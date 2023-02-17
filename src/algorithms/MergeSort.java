@@ -8,7 +8,7 @@ public class MergeSort {
     private static void sortRec(int[] array, int left, int right) {
         if (left < right) {
             // Find the middle point
-            int middle = left + (right-left)/2;
+            var middle = left + (right-left)/2;
 
             // Sort first and second halves
             sortRec(array, left, middle);
@@ -24,11 +24,10 @@ public class MergeSort {
      * First subarray is arr[l..m]
      * Second subarray is arr[m+1..r]
      */
-    private static void merge(int[] array, int left, int middle, int right)
-    {
+    private static void merge(int[] array, int left, int middle, int right) {
         // Find sizes of two subarrays to be merged
-        int n1 = middle - left + 1;
-        int n2 = right - middle;
+        var n1 = middle - left + 1;
+        var n2 = right - middle;
 
         /* Create temp arrays */
         int leftArray[] = new int[n1];
@@ -78,7 +77,7 @@ public class MergeSort {
     }
 
     private static void displayArray(int[] array) {
-        for (int i : array) {
+        for (var i : array) {
             System.out.print(i + " ");
         }
         System.out.println();

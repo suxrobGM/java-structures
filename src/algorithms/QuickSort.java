@@ -6,8 +6,8 @@ public class QuickSort {
     }
 
     private static void sortRec(int[] array, int start, int end) {
-        if(start < end){
-            int partition = partition(array, start, end); // find the correct position for the pivot
+        if(start < end) {
+            var partition = partition(array, start, end); // find the correct position for the pivot
 
             sortRec(array, start, partition-1); // recursively call the quick sort for the left had side of the pivot
             sortRec(array, partition+1, end);  // sort right hand side of the pivot
@@ -15,11 +15,11 @@ public class QuickSort {
     }
 
     private static int partition(int[] array, int start, int end) {
-        int pivot = array[end]; // choose the last element as pivot
-        int swapPosition = start;
+        var pivot = array[end]; // choose the last element as pivot
+        var swapPosition = start;
         System.out.println("\npivot: " + pivot);
 
-        for(int i = start; i <= end - 1; i++){
+        for(int i = start; i <= end - 1; i++) {
             /**
              * if value at i is less than pivot,
              * swap the ith position with the swapPosition and incriment the swapPosition to next element.
@@ -40,13 +40,13 @@ public class QuickSort {
     }
 
     private static void swap(int[] array, int index1, int index2) {
-        int temp = array[index1];
+        var temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
     }
 
     private static void displayArray(int[] array) {
-        for (int i : array) {
+        for (var i : array) {
             System.out.print(i + " ");
         }
         System.out.println();

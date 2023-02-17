@@ -2,8 +2,8 @@ package algorithms;
 
 public class BinarySearch {
     public static int binarySearch(int[] arr, int target) {
-        int lowerBound = 1;
-        int upperBound = arr.length;
+        var lowerBound = 1;
+        var upperBound = arr.length;
 
         while(lowerBound <= upperBound)
         {
@@ -27,10 +27,12 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         int[] a = {2, 3, 5, 10, 12, 24, -6};
-        int target = 10;
-        if (binarySearch(a, target)==-1) {
+        var target = 10;
+
+        if (binarySearch(a, target) == -1) {
             System.out.println("No such a number.");
-        } else {
+        }
+        else {
             System.out.println("Find it");
         }
     }

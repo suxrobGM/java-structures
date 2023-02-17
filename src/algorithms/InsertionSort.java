@@ -2,11 +2,11 @@ package algorithms;
 
 public class InsertionSort {
     public static void sort(int[] array) {
-        int n = array.length;
+        var n = array.length;
 
         for (int i = 1; i < n; i++) {
-            int key = array[i];
-            int j = i - 1;
+            var key = array[i];
+            var j = i - 1;
 
             /* Move elements of arr[0..i-1], that are
                greater than key, to one position ahead
@@ -22,7 +22,7 @@ public class InsertionSort {
     }
 
     private static void displayArray(int[] array) {
-        for (int i : array) {
+        for (var i : array) {
             System.out.print(i + " ");
         }
         System.out.println();

@@ -13,8 +13,7 @@ public class PriorityQueue<T> implements CountableCollection {
      * @param capacity Queue size that can contain the maximum number of elements
      */
     @SuppressWarnings("unchecked")
-    public PriorityQueue(int capacity)
-    {    
+    public PriorityQueue(int capacity) {    
         this._capacity = capacity + 1;
         _heap = new Task[this._capacity];
         _size = 0;

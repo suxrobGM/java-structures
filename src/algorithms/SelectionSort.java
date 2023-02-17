@@ -2,13 +2,13 @@ package algorithms;
 
 public class SelectionSort {
     public static void sort(int[] array) {
-        int n = array.length;
+        var n = array.length;
 
         for (int i = 0; i < n - 1; i++) {
             System.out.println("Iteration " + (i + 1) + ":");
 
             // Find the minimum element in unsorted array
-            int minIndex = i;
+            var minIndex = i;
             for (int j = i+1; j < n; j++) {
                 if (array[j] < array[minIndex]) {
                     minIndex = j;
@@ -22,13 +22,13 @@ public class SelectionSort {
     }
 
     private static void swap(int[] array, int index1, int index2) {
-        int temp = array[index1];
+        var temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
     }
 
     private static void displayArray(int[] array) {
-        for (int i : array) {
+        for (var i : array) {
             System.out.print(i + " ");
         }
         System.out.println();
